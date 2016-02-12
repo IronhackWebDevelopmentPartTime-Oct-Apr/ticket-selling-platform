@@ -4,6 +4,7 @@ class ActiveApi
 
   def self.uri(path)
     url_string = "#{API_URL}/#{self.endpoint}/#{path}"
+    # byebug
     return URI.parse(url_string)
   end
 
