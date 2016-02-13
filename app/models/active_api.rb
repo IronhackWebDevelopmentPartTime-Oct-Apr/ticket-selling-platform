@@ -37,13 +37,19 @@ class ActiveApi
     self.request("?#{query_hash.keys.first}=#{query_hash.values.first}")
   end
 
-  def get_band_id(band_name)
+  def self.get_band_id(band_name)
     response = request("?slug="+ band_name.parameterize)
     parsed_response = ActiveSupport::JSON.decode(response)
     parsed_response["performers"][0]["id"] 
   end
 
-  def get_recommendations(bands_ids)
-    #Your code goes here...
+  def self.get_recommendations(bands_ids)
+    #Your code goes here.../recommendations/performers?performers.id=35&client_id=NDIwNjE0MHwxNDU1MzY2NTMw
+    path = 'performers?'
+    bands_ids.each_with_index do |index, id|
+      path += 'performers.id=' + id.to_s + '&'
+    end 
+    path += 'client_id=' + CLIENT_ID
+    self.request(path)
   end
 end
