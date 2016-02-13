@@ -36,6 +36,7 @@ group :assets do
 end
 group :development, :test do
 
+gem 'pry-rails'
 # Use sqlite3 as the database for Active Record
  gem 'sqlite3'
  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
