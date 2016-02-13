@@ -3,6 +3,10 @@ class Venue < ActiveApi
     "venues"
   end
 
+  def self.all
+    self.request
+  end
+
   def self.find(id)
     self.request(id)
   end

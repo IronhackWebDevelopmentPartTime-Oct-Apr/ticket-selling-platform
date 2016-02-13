@@ -1,8 +1,11 @@
 class EventsController < ApplicationController
   def index
-    @event = Event.find("3036691")
-    # other_response = Venue.find_by(city: 'rockford')
+    @events = Event.all
+    render(:json => @events)
+  end
 
+  def show
+    @event = Event.find(params[:id])
     render(:json => @event)
   end
 end
