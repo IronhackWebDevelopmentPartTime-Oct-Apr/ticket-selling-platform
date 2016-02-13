@@ -7,8 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <%= yield %>
-  </div>
+ 
+	<div id="top_bar">
+		<% if user_signed_in? %>
+		<p>
+			<%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
+			<%= link_to ' Edit profile', edit_user_registration_path %>
+			<%= link_to ' Show profile', user_path(current_user) %>
+		</p>
+		<% else %>
+		<p>
+			<%= link_to 'Sign_up', new_user_registration_path %> |
+			<%= link_to 'Sign_in', new_user_session_path %>
+		</p>
+		<% end %>
+	</div>
+
+	<div class="container">
+    	<%= yield %>
+  	</div>
+
 </body>
 </html>

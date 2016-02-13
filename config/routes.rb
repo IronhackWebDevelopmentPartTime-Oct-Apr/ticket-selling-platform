@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   resources :events
   resources :venues
   resources :performers
+
+  devise_for :users
+  get 'profile', to: 'users#profile'   
+  resources :users
+
 end
