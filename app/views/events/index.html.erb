@@ -15,16 +15,15 @@
 <div class="container">
   <div class="filter-set">
     <hr>
-    <label class="radio-inline">
-      <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="order-by-date" checked> Date
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="order-by-price-asc"> Price / cheap first
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="order-by-price-desc"> Price / expensive first
-    </label>
+    <div class="well">
+        <div class="input-daterange input-group" id="datepicker">
+          <input type="text" id="dpd1" class="span2 input-sm form-control" name="start" />
+          <span class="input-group-addon">to</span>
+          <input type="text" id="dpd2" class="span2 input-sm form-control" name="end" />
+       </div>
+    </div>
     <hr>
+
   </div>
   <ul class="list-group">
     <!-- EVENTS LIST INSERTED HERE FROM home.js-->
