@@ -9,14 +9,18 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = ActiveSupport::JSON.decode(Event.find(params[:id]))
     unless @event
-    	render json: {error: "city not found"}, status: 404
-    	console.log("there are no cities")
-    	return
+      render json: {error: "city not found"}, status: 404
+      console.log("there are no cities")
+      return
     end
-    render :json => @events
+    respond_to do |format|
+      format.html
+      format.json {}
+    end
   end
+
 end
 
 
