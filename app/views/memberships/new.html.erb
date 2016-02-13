@@ -1,0 +1,12 @@
+<%= form_for(@membership) do |f| %>
+
+  
+  <div class="field">
+    <%= f.label :band_name %><br />
+    <%= f.text_field :band_name, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add to my Favorites" %>
+  </div>
+<% end %>

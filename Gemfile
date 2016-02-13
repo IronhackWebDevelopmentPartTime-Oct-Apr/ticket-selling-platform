@@ -51,7 +51,7 @@ end
 
 group :production do
     #
-    gem 'pg'
+  #  gem 'pg'
     # serve static assets - ¿what?
     gem 'rails_12factor'
 end
