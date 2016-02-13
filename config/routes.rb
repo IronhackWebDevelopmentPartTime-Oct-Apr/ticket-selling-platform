@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "events#index"
 
-  get 'users/superuser', to: "users#superuser"
+  get 'users/access_form', to: "users#access_form"
 
   resources :events
   resources :venues
