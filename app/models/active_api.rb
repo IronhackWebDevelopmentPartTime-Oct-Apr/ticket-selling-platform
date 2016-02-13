@@ -1,3 +1,5 @@
+require("net/http")
+
 class ActiveApi
   API_URL = "https://api.seatgeek.com/2"
   CLIENT_ID = 'NDIwNjA1MnwxNDU1MzU1Mjcx'

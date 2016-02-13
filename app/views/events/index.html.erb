@@ -18,8 +18,21 @@
 </div>
 <div class="container">
  <ul class="list-group">
-   <button type="submit" class="filter upcoming btn btn-default">Upcoming</button> <!-- by date, closer to today first -->
-   <button type="submit" class="filter price btn btn-default">Cheaper</button> <!-- by price, cheaper first -->
+   <div class="filter-set">
+     <hr>
+     <p>Filter results by:
+     <button type="submit" class="filter upcoming btn btn-default">Upcoming</button> <!-- by date, closer to today first -->
+     <button type="submit" class="filter price btn btn-default">Cheaper</button> <!-- by price, cheaper first -->
+     </p>
+
+    <select class="form-control">
+      <option></option>
+      <option>2</option>
+      <option>Price desc</option>
+      <option>Price asc</option>
+    </select>
+     <hr>
+   </div>
    <!-- CONTENT HERE -->
  </ul>
 </div>
