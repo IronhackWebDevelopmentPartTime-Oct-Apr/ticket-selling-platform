@@ -7,12 +7,13 @@ function showDetailEvent(event){
 
  	$.ajax({
 	  	type: 'GET',
-	  	url: 'https://api.seatgeek.com/2/' + "2911905",
+	  	url: 'https://api.seatgeek.com/2/events/' + eventId,
 	 	success: showInfoEvent
   	});
 }
 
-function showInfoEvent
+function showInfoEvent(response){
+	console.log(response)
 	var event_coordinates = response.venue.location  
 	var event_performers = response.performers
 
@@ -23,10 +24,10 @@ function showInfoEvent
 	$(".show-address-event").html(response.venue.address);
 
 
-	event_performers.forEach{
+	event_performers.forEach(function (performer) {
 		$(".show-each-performers").append("<li> event_performers.name </li>");
 		$(".show-each-performers").append("<img src =" + event_performers.image + "/>");
-	}
+	})
 
 	$(".show-price-event").html(response.stats.average_price);
 }
