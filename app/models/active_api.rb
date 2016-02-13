@@ -1,5 +1,6 @@
 class ActiveApi
   API_URL = "https://api.seatgeek.com/2"
+  CLIENT_ID = 'NDIwNjA1MnwxNDU1MzU1Mjcx'
   REQUEST_DEFAULTS = { :parse? => false }
 
   def self.uri(path = '')
@@ -32,5 +33,13 @@ class ActiveApi
 
   def self.find_by(query_hash)
     self.request("?#{query_hash.keys.first}=#{query_hash.values.first}")
+  end
+
+  def get_band_id(band_name)
+    #Your code goes here...
+  end
+
+  def get_recommendations(bands_ids)
+    #Your code goes here...
   end
 end
