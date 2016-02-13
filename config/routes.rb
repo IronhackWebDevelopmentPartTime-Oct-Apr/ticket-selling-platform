@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :events
   resources :venues
   resources :performers
+  resources :purchases
   resources :memberships
 
   devise_for :users, controllers: { registrations: "users/registrations" }
