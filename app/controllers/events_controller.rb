@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
   def index
-    @perfomers = Performer.get_band_id("New York Mets")
-#    respond_to do |format|
-#      format.html
-#      format.json {}
-#    end
-     render(:json => @perfomers)
+    @events = Event.all
+    respond_to do |format|
+      format.html
+      format.json {}
+    end
+#     render(:json => @perfomers)
   end
 
   def show

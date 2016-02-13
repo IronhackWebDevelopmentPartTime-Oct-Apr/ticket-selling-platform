@@ -2,3 +2,9 @@
 <p>
 <strong>Email:</strong> <%= current_user.email %>
 </p>
+
+<ul>
+<% @favs.each do |fav|%>
+<li> <%= fav.band_name %> </li>
+<% end %>
+</ul>

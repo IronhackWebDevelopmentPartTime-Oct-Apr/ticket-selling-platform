@@ -12,13 +12,15 @@ class UsersController < ApplicationController
   # con el que estoy logueado
   def profile
     @user = current_user
+    @favs = Membership.get_favs_list(current_user)    
     render 'users/profile'
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-  	@user = current_user  	
+  	@user = current_user
+    @favs = Membership.get_favs_list(current_user)  	
   end
 
   

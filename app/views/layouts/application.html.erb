@@ -1,31 +1,54 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tktplatform</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+ <title>Tktplatform</title>
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ <%= csrf_meta_tags %>
 </head>
 <body>
- 
-	<div id="top_bar">
-		<% if user_signed_in? %>
-		<p>
-			<%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
-			<%= link_to ' Edit profile', edit_user_registration_path %>
-			<%= link_to ' Show profile', user_path(current_user) %>
-		</p>
-		<% else %>
-		<p>
-			<%= link_to 'Sign_up', new_user_registration_path %> |
-			<%= link_to 'Sign_in', new_user_session_path %>
-		</p>
-		<% end %>
-	</div>
 
-	<div class="container">
-    	<%= yield %>
-  	</div>
+    <div id="top_bar">
+        <div class="container-fluid">
+            <div class="row" style="background-color:rgba(0,100,100,0.1);">
+                <div class="col-sm-12">
+                    <div class="col-sm-4">
+                        <nav class="navbar-default" style="background-color:transparent">
+                                <%= button_to 'HOME', root_path, :action => 'get', :method => 'get', class: 'btn btn-default btn-sm tpnt_button pull-left'%>
+                                <%= button_to 'SEARCH', events_path, :action => 'get', :method => 'get', class: 'btn btn-default btn-sm tpnt_button pull-left'%>    
+                        </nav>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <%= link_to image_tag("http://www.clipartbest.com/cliparts/9T4/zbk/9T4zbka7c.png", size: "100"), '/', size: "10px", class: 'top_image img-responsive center-block' %>
+                    </div>
+
+        <% if user_signed_in? %>
+            
+                    <div class="col-sm-4">
+                        <%= button_to 'Sign out', destroy_user_session_path, :action => 'destroy', :method => 'delete', class: 'btn btn-danger btn-sm text-capitalize btn-primary pull-right'%>
+
+                        <%= button_to 'Profile', edit_user_registration_path, :action => 'get', :method => 'get', class: 'btn btn-success btn-sm text-capitalize btn-primary pull-right'%>
+                        
+                    </div>
+                </div>
+            </div>
+
+        <% else %>
+
+                    <div class="col-sm-4">
+                        <%= button_to 'Sign Up', new_user_registration_path, :action => 'get', :method => 'get', class: 'btn btn-success btn-sm text-capitalize btn-primary pull-right'%>
+                        <%= button_to 'Sign in', new_user_session_path, :action => 'destroy', :method => 'delete', class: 'btn btn-default btn-sm text-capitalize btn-primary pull-right'%>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+    <div class="container">
+       <%= yield %>
+     </div>
 
 </body>
 </html>
