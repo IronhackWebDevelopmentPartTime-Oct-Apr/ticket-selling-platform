@@ -38,7 +38,9 @@ class ActiveApi
   end
 
   def get_band_id(band_name)
-    #Your code goes here...
+    response = request("?slug="+ band_name.parameterize)
+    parsed_response = ActiveSupport::JSON.decode(response)
+    parsed_response["performers"][0]["id"] 
   end
 
   def get_recommendations(bands_ids)
