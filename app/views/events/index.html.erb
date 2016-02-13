@@ -2,37 +2,27 @@
 
 <div class="container">
  <form class="form-horizontal form-cities">
-   <div class="form-group">
-     <label for="labelCity" class="col-sm-2 control-label"></label>
-     <div class="col-sm-10">
-       <input type="text" class="form-control inputCity" id="inputCity" placeholder="Search any city in the world!">
-     </div>
-   </div>
-
-   <div class="form-group">
-     <div class="col-sm-offset-2 col-sm-10">
-       <button type="submit" class="btn btn-default">Gimme tha concerts!</button>
-     </div>
-   </div>
- </form>
+    <div class="form-group">
+      <label for="labelCity" class="col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control inputCity" id="inputCity" placeholder="Search any city in the world!">
+        <button type="submit" class="btn btn-default">Gimme tha concerts!</button>
+      </div>
+    </div>
+  </form>
 </div>
-<div class="container">
- <ul class="list-group">
-   <div class="filter-set">
-     <hr>
-     <p>Filter results by:
-     <button type="submit" class="filter upcoming btn btn-default">Upcoming</button> <!-- by date, closer to today first -->
-     <button type="submit" class="filter price btn btn-default">Cheaper</button> <!-- by price, cheaper first -->
-     </p>
 
-    <select class="form-control">
-      <option></option>
-      <option>2</option>
-      <option>Price desc</option>
-      <option>Price asc</option>
+<div class="container">
+  <div class="filter-set">
+    <hr>
+    <select class="form-control filter-set">
+      <option>Date</option>
+      <option>Price / cheap first</option>
+      <option>Price / expensive first</option>
     </select>
-     <hr>
-   </div>
-   <!-- CONTENT HERE -->
+    <hr>
+  </div>
+  <ul class="list-group">
+    <!-- EVENTS LIST INSERTED HERE FROM home.js-->
  </ul>
 </div>
