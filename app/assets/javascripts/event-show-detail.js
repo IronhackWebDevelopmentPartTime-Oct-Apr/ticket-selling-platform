@@ -24,9 +24,8 @@ function showInfoEvent
 
 
 	event_performers.forEach{
-		$(".show-name-performers").html(event_performers.name);
-		$(".show-img-performers").();
-		$(".show-img-performers").attr("img", event_performers.image);
+		$(".show-each-performers").append("<li> event_performers.name </li>");
+		$(".show-each-performers").append("<img src =" + event_performers.image + "/>");
 	}
 
 	$(".show-price-event").html(response.stats.average_price);
