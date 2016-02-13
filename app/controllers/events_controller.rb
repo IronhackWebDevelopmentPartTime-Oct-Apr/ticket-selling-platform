@@ -9,7 +9,11 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
-    render(:json => @event)
+    @event = ActiveSupport::JSON.decode(Event.find(params[:id]))
+    respond_to do |format|
+      format.html
+      format.json {}
+    end
   end
+
 end

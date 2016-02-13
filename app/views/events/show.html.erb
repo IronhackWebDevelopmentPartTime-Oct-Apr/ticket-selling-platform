@@ -1,11 +1,12 @@
+
 <div class="show-page">
 	<div class="show-page-header">
 		<h1 class="show-event-title"><%= @event["title"] %></h1>
-		<h1 class="show-date-event"><%= @event["datetime_local"] %></h1>
-		<h1 class="show-place-event"><%= @event["venue"]["name"] %></h1>
-		<h1 class="show-city-event"><%= @event["venue"]["extended_address"] %></h1>
-		<h1 class="show-address-event"><%= @event["venue"]["address"] %></h1>
-		
+			<div class="show-date-event"><%= @event["datetime_local"] %></div>
+			<div class="show-place-event"><%= @event["venue"]["name"] %></div>
+			<div class="show-city-event"><%= @event["venue"]["extended_address"] %></div>
+			<div class="show-address-event"><%= @event["venue"]["address"] %></div>
+
 		<article class="show-each-performers">
 			<% @event["performers"].each do | performer | %>
 				<h1><a href=" <%= performer["url"] %>"><%= performer["name"] %></a></h1>
@@ -15,7 +16,6 @@
 			<% end %>
 		</article>
 
-
-		<h1 class="show-price-event"><%= @event["stats"]["average_price"] %></h1>
+		<p class="show-price-event"><%= @event["stats"]["average_price"] %></p>
 	</div>
 </div>
