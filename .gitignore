@@ -19,3 +19,5 @@
 #Ignore Gemfile.lock
 Gemfile.lock
 .byebug_history
+
+/config/application.yml
