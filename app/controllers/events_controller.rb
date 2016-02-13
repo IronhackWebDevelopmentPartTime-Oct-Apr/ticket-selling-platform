@@ -20,7 +20,6 @@ class EventsController < ApplicationController
       format.json {}
     end
   end
-
 end
 
 

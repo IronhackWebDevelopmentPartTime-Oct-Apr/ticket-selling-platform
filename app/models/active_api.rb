@@ -43,7 +43,13 @@ class ActiveApi
     parsed_response["performers"][0]["id"] 
   end
 
-  def get_recommendations(bands_ids)
-    #Your code goes here...
+  def self.get_recommendations(bands_ids)
+    #Your code goes here.../recommendations/performers?performers.id=35&client_id=NDIwNjE0MHwxNDU1MzY2NTMw
+    path = 'performers?'
+    bands_ids.each_with_index do |index, id|
+      path += 'performers.id=' + id.to_s + '&'
+    end 
+    path += 'client_id=' + CLIENT_ID
+    self.request(path)
   end
 end
