@@ -4,7 +4,8 @@
 			<header>
 			<h1 class="show-event-title">Title: <%= @event["title"] %></h1>
 				<h2 class="show-date-event">Event date &amp; time: <%= @event["datetime_local"].to_date.strftime("@%H:%M -> %d/%m") %></h2>
-				<a href="#" class="btn btn-lg btn-warning">Purchase!</a>
+				<%= link_to "Purchase!", "/purchases?id=#{@event['id']}", method: :post, class: "btn btn-lg btn-warning pull-right" %>
+				<!-- <a href="#" class="btn btn-lg btn-warning">Purchase!</a> -->
 				<h3 class="show-place-event">Venue: <%= @event["venue"]["name"] %></h3>
 				<p class="show-address-event">Venue address:<%= @event["venue"]["address"] %></p>
 				<p class="show-city-event">City: <%= @event["venue"]["extended_address"] %></p>
