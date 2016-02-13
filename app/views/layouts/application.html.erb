@@ -12,6 +12,7 @@
 		<p>
 			<%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %>
 			<%= link_to ' Edit profile', edit_user_registration_path %>
+			<%= link_to ' Show profile', user_path(current_user) %>
 		</p>
 		<% else %>
 		<p>
