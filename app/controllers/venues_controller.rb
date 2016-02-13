@@ -1,8 +1,11 @@
 class VenuesController < ApplicationController
   def index
-    @venue = Venue.find("1")
-    # other_response = Venue.find_by(city: 'rockford')
+    @venues = Venue.all
+    render(:json => @venues)
+  end
 
+  def show
+    @venue = Venue.find(params[:id])
     render(:json => @venue)
   end
 end

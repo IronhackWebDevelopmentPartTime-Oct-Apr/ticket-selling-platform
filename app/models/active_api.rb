@@ -2,13 +2,13 @@ class ActiveApi
   API_URL = "https://api.seatgeek.com/2"
   REQUEST_DEFAULTS = { :parse? => false }
 
-  def self.uri(path)
+  def self.uri(path = '')
     url_string = "#{API_URL}/#{self.endpoint}/#{path}"
     # byebug
     return URI.parse(url_string)
   end
 
-  def self.request(path, given_options = {})
+  def self.request(path = '', given_options = {})
     options = REQUEST_DEFAULTS.merge(given_options)
 
     uri = self.uri(path)
