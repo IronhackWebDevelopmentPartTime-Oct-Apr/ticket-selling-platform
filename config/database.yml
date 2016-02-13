@@ -25,5 +25,4 @@ test:
 production:
   adapter: postgresql
   database: productiondb
-  gmail_username: 'ironhackevent@gmail.com'
-  gmail_password: 'ironhack123'
+
