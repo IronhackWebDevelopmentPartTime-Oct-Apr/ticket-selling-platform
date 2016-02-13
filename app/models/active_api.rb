@@ -37,8 +37,10 @@ class ActiveApi
     self.request("?#{query_hash.keys.first}=#{query_hash.values.first}")
   end
 
-  def get_band_id(band_name)
-    #Your code goes here...
+  def self.get_band_id(band_name)
+    response = request("?slug="+ band_name.parameterize)
+    parsed_response = ActiveSupport::JSON.decode(response)
+    parsed_response["performers"][0]["id"] 
   end
 
   def get_recommendations(bands_ids)
