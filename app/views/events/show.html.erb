@@ -1,10 +1,36 @@
-<div class="info-page">
- <div class="info-page-header">
-   <h1 class="show-event-title"><%= @event["title"] %></h1>
- </div>
+<section>
+	<article class="show-page">
+		<div class="show-page-header">
+			<header>
+			<h1 class="show-event-title">Title: <%= @event["title"] %></h1>
+				<h2 class="show-date-event">Event date &amp; time: <%= @event["datetime_local"].to_date.strftime("@%H:%M -> %d/%m") %></h2>
+				<%= link_to "Purchase!", "/purchases?id=#{@event['id']}", method: :post, class: "btn btn-lg btn-warning pull-right" %>
+				<!-- <a href="#" class="btn btn-lg btn-warning">Purchase!</a> -->
+				<h3 class="show-place-event">Venue: <%= @event["venue"]["name"] %></h3>
+				<p class="show-address-event">Venue address:<%= @event["venue"]["address"] %></p>
+				<p class="show-city-event">City: <%= @event["venue"]["extended_address"] %></p>
+				<p class="show-price-event">Average Price: <%= @event["stats"]["average_price"].nil? ? 'n/a' : @event["stats"]["average_price"] %></p>
+			</header>
+			<section class="col-sm-10 col-sm-offset-1">
+				<header>
+					<h1>Performers:</h1>
+				</header>
+				<div class="row">
+					<% @event["performers"].each do | performer | %>
+						<article class="show-each-performers col-sm-6">
+							<header>
+								<h1><a href=" <%= performer["url"] %>"><%= performer["name"] %></a></h1>
+							</header>
+							<% if  performer["image"].nil? %>
+								<img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=i+wish+giphy+was+here&w=350&h=150">
+							<% else %>
+								<img class="img-responsive" src="<%= performer["image"] %>">
+							<% end %>
+						</article>
+					<% end %>
+				</div>
+			</section>
+		</div>
+	</article>
+</section>
 
-
- 
-
-
-</div>	
